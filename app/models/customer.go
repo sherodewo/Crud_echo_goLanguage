@@ -8,7 +8,7 @@ import (
 )
 
 type Customer struct {
-	ID        int       `gorm:"column:id;type:varchar(255);primary_key:true"`
+	ID        string    `gorm:"column:id;type:varchar(255);primary_key:true"`
 	Name      string    `gorm:"column:name;type:varchar(100)"`
 	Email     string    `gorm:"column:email;type:varchar(50);unique"`
 	Address   string    `gorm:"column:address;type:varchar(255)"`

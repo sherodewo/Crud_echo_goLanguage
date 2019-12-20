@@ -46,5 +46,13 @@ func New() (e *echo.Echo) {
 	v1.PUT("/category/:id", categoryController.Update)
 	v1.DELETE("/category/:id", categoryController.Destroy)
 	v1.GET("/category/show", categoryController.FindAll)
+
+	//CATEGORY
+	customerController:=handler.NewCustomerController(db)
+	v1.POST("/category", customerController.Store)
+	v1.GET("/category/:id", customerController.GetById)
+	v1.PUT("/category/:id", customerController.Update)
+	v1.DELETE("/category/:id", customerController.Destroy)
+	v1.GET("/category/show", customerController.FindAll)
 	return e
 }
